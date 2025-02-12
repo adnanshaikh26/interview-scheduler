@@ -21,11 +21,13 @@ const interviewSlice = createSlice({
     //   }
     // },
     editInterview: (state, action) => {
-      const index = state.interviews.findIndex(
-        (i) => i.id === action.payload.id
-      );
+      const { id, updatedInterview } = action.payload;
+      const index = state.interviews.findIndex((i) => i.id === id);
       if (index !== -1) {
-        state.interviews[index] = action.payload;
+        state.interviews[index] = {
+          ...state.interviews[index],
+          ...updatedInterview,
+        };
       }
     },
     deleteInterview: (state, action) => {

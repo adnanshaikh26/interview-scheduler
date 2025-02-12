@@ -1,5 +1,13 @@
 import React from "react";
-import { Form, Input, DatePicker, TimePicker, Select, Button } from "antd";
+import {
+  Form,
+  Input,
+  DatePicker,
+  TimePicker,
+  Select,
+  Button,
+  message,
+} from "antd";
 import { useDispatch } from "react-redux";
 import { addInterview } from "../../features/interviewSlice";
 import { useNavigate } from "react-router-dom";
@@ -12,16 +20,32 @@ const AddInterview = () => {
   const [form] = Form.useForm();
 
   const handleSubmit = (values) => {
-    const formattedValues = {
-      id: Date.now(),
-      candidate: values.candidate,
-      interviewer: values.interviewer,
-      date: values.date.format("YYYY-MM-DD"),
-      time: values.time.format("HH:mm"),
-      type: values.type,
-    };
-    dispatch(addInterview(formattedValues));
-    navigate("/");
+    try {
+      if (!values.date || !values.time) {
+        message.error("Please select a valid date and time.");
+        return;
+      }
+
+      const formattedValues = {
+        id: Date.now(),
+        candidate: values.candidate,
+        interviewer: values.interviewer,
+        date: values.date.format("YYYY-MM-DD"),
+        time: values.time.format("HH:mm"),
+        type: values.type,
+      };
+
+      dispatch(addInterview(formattedValues));
+      console.log(values);
+
+      message.success("Interview Successfully Added");
+
+      // Reset form and navigate after a short delay
+      form.resetFields();
+      setTimeout(() => navigate("/"), 500);
+    } catch (error) {
+      message.error("An error occurred while adding the interview.");
+    }
   };
 
   return (
@@ -54,7 +78,7 @@ const AddInterview = () => {
 
         <Form.Item
           name="time"
-          label="Time"
+          label="Time Slot"
           rules={[{ required: true, message: "Please select a time" }]}
         >
           <TimePicker format="HH:mm" />
