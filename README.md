@@ -1,74 +1,98 @@
-<<<<<<< HEAD
-# interview-scheduler
-=======
-# Getting Started with Create React App
+# Interview Scheduler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🚀 Project Overview
+The **Interview Scheduler** is a React-based web application that enables HR and recruiters to efficiently schedule, manage, and view interviews. It ensures **conflict-free scheduling** and provides an easy-to-use dashboard for interview tracking.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Features
+### 🔹 Core Features
+- **Schedule Interviews**: Select candidate, interviewer, date, and time slot.
+- **Conflict Validation**: Prevents overlapping interviews and enforces a **1-hour gap**.
+- **Dashboard View**: Displays all scheduled interviews in a table format.
+- **Filters**: Filter interviews by date, interviewer, or candidate.
+- **Edit & Reschedule**: Modify existing interview details.
+- **Delete Interviews**: Remove scheduled interviews with confirmation.
+- **Notifications**: Displays success/error messages for actions.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
+- **Frontend**: React.js (Redux Toolkit)
+- **UI Framework**: Ant Design, Styled Components
+- **State Management**: Redux Toolkit
+- **Routing**: React Router
+- **Calendar Integration**: `fullcalendar`
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔧 Setup Instructions
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/adnanshaikh26/interview-schedule.git
+cd interview-scheduler
+```
 
-### `npm run build`
+### **2️⃣ Install Dependencies**
+```sh
+yarn install  # or npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **3️⃣ Start the Development Server**
+```sh
+yarn start  # or npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **4️⃣ Running the Mock API (Optional)**
+If using JSON Server for data persistence:
+```sh
+npx json-server --watch db.json --port 5000
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🎨 Design Decisions
+### ✅ **1. State Management**
+- Used **Redux Toolkit** for centralized interview state management.
+- **Why?** Easily scalable for API integration and better debugging.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ✅ **2. UI & Styling**
+- Used **Ant Design** for table, modal, and form elements for a **professional look**.
+- Applied **Styled Components** for modular, maintainable styles.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### ✅ **3. Routing & Navigation**
+- Used **React Router** to separate views: `Dashboard`, `Create/Edit Interview`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📸 Screenshots (Optional)
+![image](https://github.com/user-attachments/assets/33e7ff0a-3674-4b48-9ea7-7ca7304df5ba)
+![image](https://github.com/user-attachments/assets/74d07b49-eb94-4f81-99bf-8600ca04bb69)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🏗️ Future Enhancements
+- ✅ API integration for real-time interview scheduling.
+- ✅ Google Calendar / Outlook API sync.
+- ✅ Drag & drop rescheduling using `react-big-calendar`.
+- ✅ Authentication (Admin login for HR access).
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contributing
+Feel free to **fork** this repository and submit **pull requests**!
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📄 License
+MIT License © 2025 Adnan Shaikh
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📬 Contact
+- **Email**: adnan.shk.26@gmail.com
+- **GitHub**: [adnanshaikh26](https://github.com/adnanshaikh26)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 7f1270e (Initial commit)
